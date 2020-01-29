@@ -1,0 +1,4 @@
+name: WorldNamePacket
+main: pl.kosma.worldnamepacket.WorldNamePacket
+version: 1.0
+api-version: 1.15

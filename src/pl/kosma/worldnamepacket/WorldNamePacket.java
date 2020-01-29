@@ -9,18 +9,18 @@ import org.bukkit.plugin.messaging.PluginMessageListener;
 public class WorldNamePacket extends JavaPlugin implements PluginMessageListener {
 	static byte packetID = 0;
 	static String CHANNEL_NAME = "worldinfo:world_id";
-	
-    @Override
-    public void onEnable() {
-    	this.getServer().getMessenger().registerIncomingPluginChannel(this, CHANNEL_NAME, this);
-    	this.getServer().getMessenger().registerOutgoingPluginChannel(this, CHANNEL_NAME);
-    }
-    
-    @Override
-    public void onDisable() {
-    	this.getServer().getMessenger().unregisterIncomingPluginChannel(this);
-    	this.getServer().getMessenger().unregisterOutgoingPluginChannel(this);
-    }
+
+	@Override
+	public void onEnable() {
+		this.getServer().getMessenger().registerIncomingPluginChannel(this, CHANNEL_NAME, this);
+		this.getServer().getMessenger().registerOutgoingPluginChannel(this, CHANNEL_NAME);
+	}
+
+	@Override
+	public void onDisable() {
+		this.getServer().getMessenger().unregisterIncomingPluginChannel(this);
+		this.getServer().getMessenger().unregisterOutgoingPluginChannel(this);
+	}
 
 	@Override
 	public void onPluginMessageReceived(String channel, Player player, byte[] bytes) {
